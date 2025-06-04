@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SkillVerge - AI-powered interview preparation platform with expert guidance and mock interviews">
+    <meta name="keywords" content="interview preparation, AI mock interviews, career guidance, job interviews">
+    <meta name="author" content="SkillVerge">
+    <title>SkillVerge - Master Your Interview Skills</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="assets/css/style.css" as="style">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" aria-label="SkillVerge Home">
+                <i class="fas fa-graduation-cap me-2" aria-hidden="true"></i>SkillVerge
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-2 px-3" href="register.php">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <h1 id="hero-heading" class="display-4 fw-bold text-white mb-4">
+                            Master Your Interview Skills with AI & Expert Guidance
+                        </h1>
+                        <p class="lead text-white-50 mb-4">
+                            Practice with AI-powered mock interviews, get expert feedback, and land your dream job. 
+                            Join thousands of successful candidates who improved their interview performance with SkillVerge.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="register.php?type=candidate" class="btn btn-light btn-lg px-4">
+                                <i class="fas fa-user me-2" aria-hidden="true"></i>For Candidates
+                            </a>
+                            <a href="register.php?type=company" class="btn btn-outline-light btn-lg px-4">
+                                <i class="fas fa-building me-2" aria-hidden="true"></i>For Companies
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/placeholder.svg?height=500&width=600" alt="Professional conducting a mock interview" 
+                                 class="img-fluid rounded-3 shadow-lg" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center mb-5">
+                        <h2 class="display-5 fw-bold">Why Choose SkillVerge?</h2>
+                        <p class="lead text-muted">Comprehensive interview preparation platform with cutting-edge technology</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4>AI-Powered Mock Interviews</h4>
+                            <p>Practice with intelligent AI that adapts to your domain and provides real-time feedback on technical skills, communication, and confidence.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Expert Live Sessions</h4>
+                            <p>Book 1-on-1 sessions with industry professionals for personalized guidance and realistic interview experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Performance Analytics</h4>
+                            <p>Track your progress with detailed analytics, performance metrics, and improvement suggestions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h4>Interview Recordings</h4>
+                            <p>Review your performance with recorded sessions and identify areas for improvement.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Company Portal</h4>
+                            <p>Companies can conduct interviews, schedule sessions, and evaluate candidates efficiently.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card h-100">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>Mobile Responsive</h4>
+                            <p>Practice anywhere, anytime with our fully responsive platform that works on all devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center mb-5">
+                        <h2 class="display-5 fw-bold">Choose Your Plan</h2>
+                        <p class="lead text-muted">Start with free trials and upgrade for premium features</p>
+                    </div>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h4>Free Trial</h4>
+                                <div class="price">₹0</div>
+                                <p>2 AI Mock Interviews</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> 2 AI Mock Interviews</li>
+                                <li><i class="fas fa-check"></i> Basic Performance Report</li>
+                                <li><i class="fas fa-check"></i> Domain Selection</li>
+                                <li><i class="fas fa-times text-muted"></i> Expert Sessions</li>
+                                <li><i class="fas fa-times text-muted"></i> Advanced Analytics</li>
+                            </ul>
+                            <a href="register.php" class="btn btn-outline-primary w-100">Start Free Trial</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pricing-card featured">
+                            <div class="pricing-header">
+                                <h4>Monthly Premium</h4>
+                                <div class="price">₹100<span>/month</span></div>
+                                <p>Unlimited Access</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Unlimited AI Interviews</li>
+                                <li><i class="fas fa-check"></i> Expert Live Sessions</li>
+                                <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                                <li><i class="fas fa-check"></i> Interview Recordings</li>
+                                <li><i class="fas fa-check"></i> Priority Support</li>
+                            </ul>
+                            <a href="register.php" class="btn btn-primary w-100">Get Premium</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h4>Annual Premium</h4>
+                                <div class="price">₹1200<span>/year</span></div>
+                                <p>Save 2 months!</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Everything in Monthly</li>
+                                <li><i class="fas fa-check"></i> 2 Months Free</li>
+                                <li><i class="fas fa-check"></i> Exclusive Webinars</li>
+                                <li><i class="fas fa-check"></i> Career Guidance</li>
+                                <li><i class="fas fa-check"></i> Resume Review</li>
+                            </ul>
+                            <a href="register.php" class="btn btn-success w-100">Best Value</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-graduation-cap me-2"></i>SkillVerge
+                        </h5>
+                        <p class="text-white-50">Empowering candidates and companies with AI-driven interview solutions for better hiring outcomes.</p>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h6 class="fw-bold mb-3">Platform</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white-50 text-decoration-none">For Candidates</a></li>
+                            <li><a href="#" class="text-white-50 text-decoration-none">For Companies</a></li>
+                            <li><a href="#" class="text-white-50 text-decoration-none">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h6 class="fw-bold mb-3">Support</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+                            <li><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                            <li><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <h6 class="fw-bold mb-3">Contact Info</h6>
+                        <p class="text-white-50 mb-2">
+                            <i class="fas fa-envelope me-2"></i>support@skillverge.com
+                        </p>
+                        <p class="text-white-50 mb-2">
+                            <i class="fas fa-phone me-2"></i>+91 9876543210
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="text-white-50 me-3"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-white-50 me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white-50 me-3"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="text-white-50 mb-0">&copy; 2024 SkillVerge. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="text-white-50 mb-0">Made with <i class="fas fa-heart text-danger"></i> for better interviews</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Add proper script loading -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Add error handling for scripts -->
+    <script>
+        window.addEventListener('error', function(e) {
+            console.error('Script error:', e.error);
+        });
+    </script>
+</body>
+</html>
