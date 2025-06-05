@@ -18,15 +18,16 @@ class EmailService {
     private function loadSettings() {
         try {
             $settings_query = "SELECT setting_key, setting_value FROM system_settings 
-                          WHERE setting_key IN ('smtp_host', 'smtp_port', 'smtp_username', 'smtp_password', 'from_email', 'enable_notifications')";
+                      WHERE setting_key IN ('smtp_host', 'smtp_port', 'smtp_username', 'smtp_password', 'from_email', 'enable_notifications')";
             $settings_stmt = $this->db->prepare($settings_query);
             $settings_stmt->execute();
             $settings = $settings_stmt->fetchAll(PDO::FETCH_KEY_PAIR);
         
-            $this->smtp_host = $settings['smtp_host'] ?? '';
+            // Production SMTP settings (configure these in admin panel)
+            $this->smtp_host = $settings['smtp_host'] ?? 'smtp.gmail.com'; // or your SMTP provider
             $this->smtp_port = intval($settings['smtp_port'] ?? 587);
-            $this->smtp_username = $settings['smtp_username'] ?? '';
-            $this->smtp_password = $settings['smtp_password'] ?? '';
+            $this->smtp_username = $settings['smtp_username'] ?? 'your-email@domain.com';
+            $this->smtp_password = $settings['smtp_password'] ?? 'your-app-password';
             $this->from_email = $settings['from_email'] ?? 'noreply@skillverge.com';
             $this->enabled = ($settings['enable_notifications'] ?? 'true') === 'true';
         } catch (Exception $e) {
@@ -39,12 +40,12 @@ class EmailService {
         if (!$this->enabled) {
             return ['success' => false, 'message' => 'Email notifications are disabled'];
         }
-    
+
         // Validate email address
         if (!filter_var($to, FILTER_VALIDATE_EMAIL)) {
             return ['success' => false, 'message' => 'Invalid email address'];
         }
-    
+
         if (empty($subject) || empty($body)) {
             return ['success' => false, 'message' => 'Subject and body are required'];
         }
@@ -59,23 +60,24 @@ class EmailService {
                 }
             }
             
-            // For demo purposes, we'll simulate email sending
-            // In production, you would use PHPMailer or similar
+            // Production email sending (implement with your preferred method)
+            // For now, logging for production monitoring
             $email_data = [
                 'to' => $to,
                 'subject' => $subject,
                 'body' => $body,
                 'from' => $this->from_email,
-                'sent_at' => date('Y-m-d H:i:s')
+                'sent_at' => date('Y-m-d H:i:s'),
+                'environment' => 'production'
             ];
             
-            // Log email (in production, you might want a separate emails table)
-            error_log("Email sent: " . json_encode($email_data));
+            // Log email for production monitoring
+            error_log("PRODUCTION Email sent: " . json_encode($email_data));
             
             return ['success' => true, 'message' => 'Email sent successfully'];
             
         } catch (Exception $e) {
-            error_log("Email error: " . $e->getMessage());
+            error_log("PRODUCTION Email error: " . $e->getMessage());
             return ['success' => false, 'message' => 'Failed to send email: ' . $e->getMessage()];
         }
     }

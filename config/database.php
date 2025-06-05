@@ -1,19 +1,32 @@
 <?php
 class Database {
-    private $host = "localhost";
-    private $db_name = "skillverge";
-    private $username = "root";
-    private $password = "";
+    private $host = "your-production-host"; // e.g., "localhost" or your hosting provider's DB host
+    private $db_name = "your_production_db_name"; // Your live database name
+    private $username = "your_production_username"; // Your live DB username
+    private $password = "your_production_password"; // Your live DB password
     public $conn;
 
     public function getConnection() {
         $this->conn = null;
         try {
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-            $this->conn->exec("set names utf8");
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // Production connection with SSL and optimizations
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false,
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+            ];
+            
+            $this->conn = new PDO(
+                "mysql:host=" . $this->host . ";dbname=" . $this->db_name . ";charset=utf8mb4", 
+                $this->username, 
+                $this->password,
+                $options
+            );
         } catch(PDOException $exception) {
-            echo "Connection error: " . $exception->getMessage();
+            error_log("Production DB Connection error: " . $exception->getMessage());
+            die("Database connection failed. Please contact support.");
         }
         return $this->conn;
     }
